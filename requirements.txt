@@ -1,0 +1,9 @@
+flake8==6.0.0
+lxml==4.9.2
+mccabe==0.7.0
+mypy==1.0.1
+mypy-extensions==1.0.0
+pycodestyle==2.10.0
+pyflakes==3.0.1
+python-docx==0.8.11
+typing_extensions==4.5.0

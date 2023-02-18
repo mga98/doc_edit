@@ -13,7 +13,11 @@
     Com isso o usuário precisa apenas abrir o documento a ser editado e preencher os
     campos que querem substituir com a mesma sintaxe.
 
+<div align='center'>
+
 ![Exemplo campos](https://user-images.githubusercontent.com/95861523/219868755-fed5fa5d-75a3-4e1e-92fc-2ec8f67237e7.png)
+
+</div>
 
 </p>
 

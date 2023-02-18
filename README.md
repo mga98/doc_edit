@@ -7,6 +7,13 @@
 <h2> Descrição </h2>
 
 <p>
+    doc_edit é um script que permite o usuário preencher documentos .docx (Word)
+    automaticamente através de campos de um formulário .json. O script fornece
+    uma criação dos campos dos formulários terminados com um underscore (ex: nome_).
+    Com isso o usuário precisa apenas abrir o documento a ser editado e preencher os
+    campos que querem substituir com a mesma sintaxe.
+
+![Exemplo campos](https://user-images.githubusercontent.com/95861523/219868755-fed5fa5d-75a3-4e1e-92fc-2ec8f67237e7.png)
 
 </p>
 
@@ -15,8 +22,6 @@
 <ul>
     <li></li>
 </ul>
-
-<h2> Screenshots </h2>
 
 <h2> Tecnologias utilizadas </h2>
 

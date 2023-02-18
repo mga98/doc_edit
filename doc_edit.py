@@ -4,9 +4,6 @@ from docx.opc.exceptions import PackageNotFoundError
 
 
 class DocEdit:
-    def __init__(self) -> None:
-        self.form = None
-
     def open_document(self, dir: str) -> Document:
         """
         Open the document .docx to be edited.
@@ -20,6 +17,26 @@ class DocEdit:
             return print(f'{error}')
 
         return document
+
+    def create_form(self, save_dir, *args):
+        """
+        Create a .json form to be used later to update a document
+        with the function update_document()
+
+        :param save_dir: file's save directory
+        :param *args: keys of the form 
+        """
+        form = {}
+
+        for i in args:
+            form[f'{i}_'] = ''
+
+        try:
+            with open(save_dir, 'w') as fp:
+                json.dump(form, fp)
+
+        except (FileNotFoundError, PermissionError, TypeError) as error:
+            return print(f'{error}')
 
     def upload_form(self, dir: str):
         """
@@ -36,26 +53,6 @@ class DocEdit:
                 return data
 
         except (FileNotFoundError, IndexError) as error:
-            return print(f'{error}')
-
-    def save_form(self, save_dir):
-        """
-        Saves the keys used in the update_document() function in
-        a .json file to be reused as a parameter for the same function.
-
-        :param save_dir: file's save directory
-        """
-        try:
-            form = self.form
-            save = save_dir
-
-            for i in form:
-                form[i] = ''
-
-            with open(save, 'w') as fp:
-                json.dump(form, fp)
-
-        except (FileNotFoundError, PermissionError, TypeError) as error:
             return print(f'{error}')
 
     def update_document(self, document, save_dir, form=None, **kwargs):
@@ -86,7 +83,6 @@ class DocEdit:
                     )
 
             document.save(f'{save_dir}.docx')
-            self.form = fields
 
         except (FileNotFoundError, KeyError, AttributeError) as error:
             return print(f'{error}')

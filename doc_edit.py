@@ -57,10 +57,8 @@ class DocEdit:
 
     def update_document(self, document, save_dir, form=None, **kwargs):
         """
-        Update the values of the keys to be changed in the document .docx;
-        If you have a .json file with predefined keys, you can use it here,
-        passing it as an argument to "form", or pass the keys and values
-        trough the **kwargs parameter.
+        It generates a .docx document with the form keys filled in. Or keys
+        and values ​​can be passed as parameters in dictionary format.
 
         :param document: .docx file
         :param save_dir: file's save directory

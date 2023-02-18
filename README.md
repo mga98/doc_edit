@@ -8,10 +8,8 @@
 
 <p>
     doc_edit é um script que permite o usuário preencher documentos .docx (Word)
-    automaticamente através de campos de um formulário .json. O script fornece
-    uma criação dos campos dos formulários terminados com um underscore (ex: nome_).
-    Com isso o usuário precisa apenas abrir o documento a ser editado e preencher os
-    campos que querem substituir com a mesma sintaxe.
+    automaticamente através de campos de um formulário .json ou por argumentos em uma função. O script fornece uma criação dos campos dos formulários terminados com um underscore (ex: nome_). Com isso o usuário precisa apenas abrir o documento a ser editado e preencher os campos que querem substituir com a mesma sintaxe. Exemplo em
+    <a href="https://github.com/mga98/doc_edit/blob/main/interface.py">interface.py</a>
 
 <div align='center'>
 
@@ -21,11 +19,19 @@
 
 </p>
 
-<h2> Features </h2>
+<h2> Funções </h2>
 
-<ul>
-    <li></li>
-</ul>
+<h3>open_document()</h3>
+<p>Abre um documento .docx (Word) que você deseja preencher.</p>
+
+<h3>create_form()</h3>
+<p>Cria um formulário .json com as chaves que você utilizará depois para preencher o documento.</p>
+
+<h3>upload_form()</h3>
+<p>Abre um formulário .json já criado com as chaves a serem preenchidas.</p>
+
+<h3>update_document()</h3>
+<p>Gera um documento .docx com as chaves do formulário preenchidas. Ou as chaves e os valores podem ser passados como parâmetros em formato de dicionário.</p>
 
 <h2> Tecnologias utilizadas </h2>
 

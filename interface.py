@@ -5,10 +5,12 @@ doc_edit = DocEdit()
 document = doc_edit.open_document('C:/Users/LENOVO/Desktop/Contrato')
 
 # Create a form
-# doc_edit.create_form(
-#     'C:/Users/LENOVO/Desktop/formtest',
-#     'nome', 'idade', 'cpf'
-# )
+doc_edit.create_form(
+    'C:/Users/LENOVO/Desktop/formtest',
+    keys=[
+        'nome', 'idade', 'cep', 'endereco'
+    ]
+)
 
 # Upload created form
 form = doc_edit.upload_form(

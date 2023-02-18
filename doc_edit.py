@@ -18,7 +18,7 @@ class DocEdit:
 
         return document
 
-    def create_form(self, save_dir, *args):
+    def create_form(self, save_dir: str, keys: list):
         """
         Create a .json form to be used later to update a document
         with the function update_document()
@@ -28,7 +28,7 @@ class DocEdit:
         """
         form = {}
 
-        for i in args:
+        for i in keys:
             form[f'{i}_'] = ''
 
         try:
@@ -55,10 +55,10 @@ class DocEdit:
         except (FileNotFoundError, IndexError) as error:
             return print(f'{error}')
 
-    def update_document(self, document, save_dir, form=None, **kwargs):
+    def update_document(self, document, save_dir: str, form=None, **kwargs):
         """
         It generates a .docx document with the form keys filled in. Or keys
-        and values ​​can be passed as parameters in dictionary format.
+        and values can be passed as parameters in dictionary format.
 
         :param document: .docx file
         :param save_dir: file's save directory

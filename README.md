@@ -45,6 +45,7 @@
 <h4> Dependências </h4>
 <ul>
 <li>Python 3.0 ou +</li>
+<li>python-docx</li>
 </ul>
 <h4> Clonando o projeto </h4>
 

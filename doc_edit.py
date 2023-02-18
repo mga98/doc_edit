@@ -24,7 +24,7 @@ class DocEdit:
         with the function update_document()
 
         :param save_dir: file's save directory
-        :param *args: keys of the form 
+        :param *args: keys of the form
         """
         form = {}
 
@@ -64,7 +64,7 @@ class DocEdit:
 
         :param document: .docx file
         :param save_dir: file's save directory
-        :param form: A form of parameters fields
+        :param form: ready form
         :param **kwargs: Key and values parameters
         """
         try:

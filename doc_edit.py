@@ -3,7 +3,7 @@ from docx import Document
 from docx.opc.exceptions import PackageNotFoundError
 
 
-class EditDoc:
+class DocEdit:
     def __init__(self) -> None:
         self.form = None
 
@@ -15,18 +15,17 @@ class EditDoc:
         :return .docx file
         """
         try:
-            document = Document(dir)
-        except PackageNotFoundError as error:
+            document = Document(f'{dir}.docx')
+        except (PackageNotFoundError, AttributeError) as error:
             return print(f'{error}')
 
         return document
 
-    def upload_form(self, dir: str, *args):
+    def upload_form(self, dir: str):
         """
-        Upload a .json form with already saved fields that
+        Upload a .json form with already saved keys that
         can be used as a parameter in update_document() function.
 
-        :param *args: values for form keys
         :param dir: form's directory
         :return dict
         """
@@ -34,15 +33,9 @@ class EditDoc:
             with open(dir, 'r') as fp:
                 data = json.load(fp)
 
-                if len(data) >= len(args):
-                    for i, field in enumerate(data):
-                        data[field] = args[i]
-                else:
-                    return None
-
                 return data
 
-        except FileNotFoundError as error:
+        except (FileNotFoundError, IndexError) as error:
             return print(f'{error}')
 
     def save_form(self, save_dir):
@@ -95,5 +88,5 @@ class EditDoc:
             document.save(f'{save_dir}.docx')
             self.form = fields
 
-        except (FileNotFoundError, KeyError) as error:
+        except (FileNotFoundError, KeyError, AttributeError) as error:
             return print(f'{error}')

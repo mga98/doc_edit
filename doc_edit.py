@@ -84,3 +84,34 @@ class DocEdit:
 
         except (FileNotFoundError, KeyError, AttributeError) as error:
             return print(f'{error}')
+
+
+if __name__ == '__main__':
+    # Init the program
+    doc_edit = DocEdit()
+    document = doc_edit.open_document("<document's directory>")
+
+    # Create a form
+    doc_edit.create_form(
+        "<form's save directory>",
+        keys=[
+            'name', 'age', 'email'  # form's fields
+        ]
+    )
+
+    # Upload created form
+    form = doc_edit.upload_form(
+        "<form's directory>",
+    )
+
+    # Updating the uploaded form
+    for key, value in form.items():
+        value = str(input(f'{key}: '))
+        form[key] = value
+
+    # Using the uploaded form to fill the document fields
+    doc_edit.update_document(
+        document,
+        "<edited document's directory>",
+        form
+    )

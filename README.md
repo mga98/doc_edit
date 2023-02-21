@@ -11,13 +11,19 @@
     automaticamente através de campos de um formulário .json ou por argumentos em uma função. O script fornece uma criação dos campos dos formulários terminados com um underscore (ex: nome_). Com isso o usuário precisa apenas abrir o documento a ser editado e preencher os campos que querem substituir com a mesma sintaxe. Exemplo em
     <a href="https://github.com/mga98/doc_edit/blob/main/interface.py">interface.py</a>
 
-<div align='center'>
+<div>
 
 ![Exemplo campos](https://user-images.githubusercontent.com/95861523/219868755-fed5fa5d-75a3-4e1e-92fc-2ec8f67237e7.png)
 
 </div>
 
-</p>
+<p>Preenchendo os respectivos campos com nome_: John; idade_: 30; cpf_: 123.456.789-10</p>
+
+<div>
+
+![Exemplo preenchido](https://user-images.githubusercontent.com/95861523/220355667-b46d10bd-f829-452f-b65d-a2fd6024473c.png)
+
+</div>
 
 <h2> Funções </h2>
 
